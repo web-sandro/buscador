@@ -3,8 +3,8 @@ const fetch = require('node-fetch');
 const app = express();
 
 // 🔐 Substitua por sua chave e CSE ID depois
-const API_KEY = 'AIzaSyDzv-P7LZAZw7ukqzqXPsw-X4JHBB1poh8';
-const CSE_ID = '4ac099d3e03a04ef3';
+const API_KEY = process.env.API_KEY;
+const CSE_ID = process.env.CSE_ID;
 
 app.use(express.static('src'));
 
