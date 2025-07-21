@@ -20,3 +20,16 @@ function buscar() {
       document.getElementById('resultado').innerHTML = 'Erro na busca.';
     });
 }
+
+    function tentarFocarCampo() {
+      const input = document.querySelector('input.gsc-input');
+      if (input) {
+        input.focus();
+      } else {
+        setTimeout(tentarFocarCampo, 100);
+      }
+    }
+
+    window.addEventListener('load', () => {
+      tentarFocarCampo();
+    });

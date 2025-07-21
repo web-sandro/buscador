@@ -6,10 +6,38 @@
 </head>
 <body>
   <h2>Buscar informações online</h2>
-  <input type="text" id="busca" placeholder="Digite um nome...">
-  <button onclick="buscar()">Buscar</button>
-  <div id="resultado"></div>
 
+  <!-- Google Search Element -->
+  <script async src="https://cse.google.com/cse.js?cx=654aa9e26ad8e40f9"></script>
+  <div class="gcse-search"></div>
+
+  <!-- Focar automaticamente no campo -->
+  <script>
+    // Tenta focar no input de busca assim que estiver pronto
+    function tentarFocarCampo() {
+      const input = document.querySelector('input.gsc-input');
+      if (input) {
+        input.focus();
+      } else {
+        // Tenta de novo até encontrar
+        setTimeout(tentarFocarCampo, 100);
+      }
+    }
+
+    window.addEventListener('load', () => {
+      tentarFocarCampo();
+    });
+  </script>
+  <!-- <h3>Outros links úteis</h3>
+  <ol>
+    <li><a href="https://www.google.com/search?q=site:github.com+buscador">Buscar no GitHub</a></li>
+    <li><a href="https://www.google.com/search?q=site:stackoverflow.com+buscador">Buscar no Stack Overflow</a></li>
+    <li><a href="https://www.google.com/search?q=site:pt.stackoverflow.com+buscador">Buscar no Stack Overflow em Português</a></li>
+    <li><a href="https://www.google.com/search?q=site:pt.wikipedia.org+buscador">Buscar na Wikipédia em Português</a></li>
+    <li><a href="https://www.google.com/search?q=site:pt.wikipedia.org+buscador+programação">Buscar na Wikipédia em Português sobre Programação</a></li>
+    <li><a href="https://www.google.com/search?q=site:pt.wikipedia.org+buscador+tecnologia">Buscar na Wikipédia em Português sobre Tecnologia</a></li>
+    <li><a href="https://www.google.com/search?q=site:pt.wikipedia.org+buscador+ciência">Buscar na Wikipédia em Português sobre Ciência</a></li>
+  </ol> -->
   <script src="script.js"></script>
 </body>
 </html>
